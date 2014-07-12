@@ -33,10 +33,7 @@
 
   {% endif %}
 
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
 
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
@@ -83,6 +80,13 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         <a href="{{ pathto(master_doc) }}" class="fa fa-home"> {{ project }}</a>
+        {% if theme_oneliner %}
+        <div class="tablet-hide">
+          <small>{{ theme_oneliner }}</small>
+          <hr />
+        </div>
+        {% endif %}
+
         {% include "searchbox.html" %}
       </div>
 
@@ -95,6 +99,22 @@
             <div class="local-toc">{{ toc }}</div>
         {% endif %}
       </div>
+
+
+      {% if theme_github_user and theme_github_repo %}
+      <div class="tablet-hide">
+        <hr />
+		<p class="wy-text-center">
+	        <a href="https://github.com/{{ theme_github_user}}/{{ theme_github_repo }}"
+			   class="github-button" data-icon="octicon-mark-github"
+		       data-count-href="/{{ theme_github_user }}/{{ theme_github_repo }}/stargazers"
+			   data-count-api="/repos/{{ theme_github_user }}/{{ theme_github_repo}}#stargazers_count">Github</a>
+	        <a href="https://github.com/{{ theme_github_user}}/{{ theme_github_repo }}/issues"
+			   class="github-button" data-icon="octicon-issue-opened">Issues</a>
+
+        </p>
+      </div>
+      {% endif %}
       &nbsp;
     </nav>
 
@@ -140,10 +160,7 @@
 
   {% endif %}
 
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-  {% endif %}
+  <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
   {# STICKY NAVIGATION #}
   {% if theme_sticky_navigation %}
@@ -152,6 +169,11 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
+  {% endif %}
+
+
+  {% if theme_github_user and theme_github_repo %}
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   {% endif %}
 
   {%- block footer %} {% endblock %}
