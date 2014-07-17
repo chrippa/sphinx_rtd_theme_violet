@@ -4023,6 +4023,9 @@ div[class^='highlight'] pre {
 .wy-menu-vertical ul {
   margin-bottom: 0;
 }
+.wy-menu-vertical li.active {
+  background: #634b89;
+}
 .wy-menu-vertical li.divide-top {
   border-top: solid 1px #404040;
 }
