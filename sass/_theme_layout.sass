@@ -198,12 +198,15 @@
   position: relative
   line-height: 50px
   text-align: center
-  font-size: 100%
+  font-size: 150%
   +clearfix
   a
     color: $white
     font-weight: bold
     +font-smooth
+    &:hover, &:visited:hover
+      color: $white
+
   img
     margin-right: $base-line-height / 2
     height: 45px
@@ -290,6 +293,8 @@ footer
     background-color: $menu-current-background-color
     > a, .wy-dropdown > a
       color: $menu-current-color
+      &:hover, &:visited:hover
+        color: $menu-current-color
 
 
 +media($desktop-wider)

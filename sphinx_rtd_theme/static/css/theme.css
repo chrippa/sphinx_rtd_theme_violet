@@ -4209,7 +4209,7 @@ div[class^='highlight'] pre {
   position: relative;
   line-height: 50px;
   text-align: center;
-  font-size: 100%;
+  font-size: 150%;
   *zoom: 1;
 }
 .wy-nav-top:before, .wy-nav-top:after {
@@ -4222,6 +4222,9 @@ div[class^='highlight'] pre {
 .wy-nav-top a {
   color: white;
   font-weight: bold;
+}
+.wy-nav-top a:hover, .wy-nav-top a:visited:hover {
+  color: white;
 }
 .wy-nav-top img {
   margin-right: 12px;
@@ -4336,6 +4339,9 @@ footer p {
     background-color: #6f5499;
   }
   .wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a {
+    color: white;
+  }
+  .wy-side-nav-search > a:hover, .wy-side-nav-search > a:visited:hover, .wy-side-nav-search .wy-dropdown > a:hover, .wy-side-nav-search .wy-dropdown > a:visited:hover {
     color: white;
   }
 }
