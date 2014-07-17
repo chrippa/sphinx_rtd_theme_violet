@@ -180,9 +180,6 @@
 
 .wy-nav-side
   float: left
-  position: absolute
-  top: 0
-  left: 0
   width: $nav-desktop-width
   overflow: hidden
   min-height: 100%
@@ -268,6 +265,7 @@ footer
   .wy-nav-top
     display: block
   .wy-nav-side
+    position: absolute
     @if $nav-desktop-position == left
       left: -$nav-desktop-width
     @else

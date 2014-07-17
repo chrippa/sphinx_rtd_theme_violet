@@ -4188,9 +4188,6 @@ div[class^='highlight'] pre {
 
 .wy-nav-side {
   float: left;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 225px;
   overflow: hidden;
   min-height: 100%;
@@ -4309,6 +4306,7 @@ footer p {
   }
 
   .wy-nav-side {
+    position: absolute;
     left: -225px;
   }
   .wy-nav-side.shift {
