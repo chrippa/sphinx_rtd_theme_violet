@@ -4238,6 +4238,7 @@ div[class^='highlight'] pre {
   font-size: 30px;
   float: left;
   cursor: pointer;
+  margin-top: 8px;
 }
 
 .wy-nav-content-wrap {
