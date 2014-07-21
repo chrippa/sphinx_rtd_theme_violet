@@ -164,12 +164,24 @@
       vertical-align: top
   table.docutils
     @extend .wy-table
-    @extend .wy-table-bordered-all
+    @extend .wy-table-bordered-rows
+    border: none
+
+    td, th
+      border-left: none
+      border-top: none
+      border-right: none
+
     td
       vertical-align: top
 
+    &.footnote
+      width: auto
+
     &:not(.field-list)
       @extend .wy-table-striped
+      @extend .full-width
+
   // This table is what gets spit out for auto-generated API stuff. I style it smaller bits of padding.
   table.field-list
     @extend .wy-table
